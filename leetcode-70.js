@@ -43,7 +43,7 @@ const climbStairs = function(n) {
         prev2 = prev1;
         prev1 = curr;
     }
-    console.log(curr);
+    return curr;
 };
 
-console.log(climbStairs(5))
+console.log(climbStairs(10))
