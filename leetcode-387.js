@@ -17,8 +17,8 @@
 
 const firstUniqChar = function(s) {
     // iterate through string using for loop
-    // conditional using indexOf and lastIndexOf to check for duplicating characters
-    // return index for first repeating character
+    // conditional using indexOf and lastIndexOf to check for repeating characters
+    // return index for first non-repeating character
     // if not present, return -1
 
     for(i=0;i<s.length;i++){
@@ -29,4 +29,4 @@ const firstUniqChar = function(s) {
     return -1;
 };
 
-console.log(firstUniqChar('loveleetcode'));
+console.log(firstUniqChar('livelaughlove'));
