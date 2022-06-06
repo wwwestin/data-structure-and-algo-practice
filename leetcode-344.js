@@ -13,6 +13,10 @@
 // Input: s = ["H","a","n","n","a","h"]
 // Output: ["h","a","n","n","a","H"]
 
+let s = ["h","e","l","l","o"];
+
 const reverseString = function(s) {
-    
+    return s.reverse();
 };
+
+console.log(reverseString(s))
