@@ -14,6 +14,34 @@
 // Input: sentence = "leetcode"
 // Output: false
 
+sentence = "thequickbrownfoxjumpsoverthelazydog";
+
 const checkIfPangram = function(sentence) {
-    
+    // declare string containing whole alphabet within single string 
+    // declare variable that splits aforementioned string
+    // declare variable with counter
+
+    // use forEach to iterate through sentence
+    // each unique iteration increments the counter by one
+    // if counter reaches 26 once iteration is complete (or before), return true
+    // if counter does not reach 26 once iteration is complete, return false
+
+    let english = 'abcdefghijklmnopqrstuvwxyz'
+    let englishArray = english.split('');
+
+    let counter = 0;
+
+    englishArray.forEach(char => {
+        if (sentence.includes(char)) {
+            counter++
+        }
+    });
+
+    if (counter == 26) {
+        return true;
+    } else {
+        return false;
+    }
 };
+
+console.log(checkIfPangram(sentence))
