@@ -22,6 +22,39 @@
 // Input: command = "(al)G(al)()()G"
 // Output: "alGalooG"
 
+const command = "G()(al)"
+
 const interpret = function(command) {
+    // declare empty string variable (result)
+    // for loop to iterate through command
+    // conditional for adding 'G' to result if encountered
+    // conditional for adding 'o' to result if "(" AND  ")" is encountered along with advancing the iteration by 1 (since "()" will only be max one character ahead of "(")
+    // else statement for if "(" AND "al" is encountered along with advancing the iteration by 3 (since "(al)" will only be max three characters ahead of "(")
+
+   
+    let result = '';
     
+    for(let i = 0; i<command.length; i++) {
+        
+        if(command[i] == 'G') {
+            result += command[i]; 
+        }
+        
+        if(command[i] == '(') {
+            if(command[i+1] == ')') {
+                result += 'o';
+                i += 1;
+            } else {
+                result += 'al';
+                i += 3;
+            }
+        }
+    }
+    
+    return result;
+
 };
+
+console.log(interpret(command))
+
+
