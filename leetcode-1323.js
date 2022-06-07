@@ -26,5 +26,20 @@
 // Explanation: It is better not to apply any change.
 
 const maximum69Number  = function(num) {
+// declare variable that converts integer to string and splits each individual character
+// use for loop to find first instance of a 6 and convert it to a 9
+// return the joined string
+
+    const newNum = num.toString().split("");
+
+    for(var i=0; i<=newNum.length; i++){
+        if (newNum[i]== 6){
+            newNum[i]= 9
+            break;
+        }
+    }
+    return newNum.join("");
     
 };
+
+console.log(maximum69Number(9669))
