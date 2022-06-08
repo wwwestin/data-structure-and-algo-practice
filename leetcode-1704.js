@@ -13,7 +13,14 @@
 // Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel. Therefore, they are alike.
 
 const halvesAreAlike = function(s) {
-    
+    // declare array variable with vowel library
+    // declare counter variable
+    // set s parameter to lower case
+    // for loop to iterate through each half of s
+    // increment counter if vowel is found in first half of s
+    // decrement counter if vowel is found in any index beyond last index in second half of s
+    // return true if counter is 0
+
 const vowels = ['a', 'e', 'i', 'o', 'u']
   let result = 0
 
