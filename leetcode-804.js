@@ -26,4 +26,16 @@
 
 const uniqueMorseRepresentations = function(words) {
     
+    const morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+    const alph = "abcdefghijklmnopqrstuvwxyz"
+	
+    return new Set(words.map((word) => {
+        let s = ''
+        for (let char of word) {
+            s += morse[alph.indexOf(char)]
+        }
+        return s
+    })).size
 };
+
+console.log(uniqueMorseRepresentations(["gin","zen","gig","msg"]))
