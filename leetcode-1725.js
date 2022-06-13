@@ -42,4 +42,4 @@ const countGoodRectangles = function(rectangles) {
     
 };
 
-console.log(countGoodRectangles([[2,3],[3,7],[4,3],[3,7]]));
+console.log(countGoodRectangles([[16,3],[3,14],[4,23],[16,7]]));
