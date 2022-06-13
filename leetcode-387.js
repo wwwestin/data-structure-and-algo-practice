@@ -21,8 +21,8 @@ const firstUniqChar = function(s) {
     // return index for first non-repeating character
     // if not present, return -1
 
-    for(i=0;i<s.length;i++){
-        if (s.indexOf(s[i])===s.lastIndexOf(s[i])){
+    for(i = 0; i < s.length; i++){
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])){
            return i;
        } 
     }
