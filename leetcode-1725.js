@@ -20,6 +20,26 @@
 // Output: 3
 
 const countGoodRectangles = function(rectangles) {
+    // declare boolean comparison and counter variable
+    // for loop to iterate through array 
+    // declare variable with ternary operator to evaluate if i at first index is less than i at the second index, if true then i at first index is returned, else i at second index is returned
+    // conditional which sets res to 1 if x is larger than -1 and sets prev to x; if x is smaller than prev (as well as incrementing res), prev is unchanged
+    // return res
     
+    let prev = -1;
+    let res = 0;
+
+        for (let i = 0; i < rectangles.length; i++) {
+            let x = rectangles[i][0] < rectangles[i][1] ? rectangles[i][0] : rectangles[i][1];
+                if (x > prev) {
+                res = 1;
+                prev = x;
+                } else if (x == prev) {
+            res++;
+            }
+  }
+  return res;
     
 };
+
+console.log(countGoodRectangles([[2,3],[3,7],[4,3],[3,7]]));
