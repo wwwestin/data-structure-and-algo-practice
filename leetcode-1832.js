@@ -17,7 +17,7 @@
 sentence = "thequickbrownfoxjumpsoverthelazydog";
 
 const checkIfPangram = function(sentence) {
-    // declare string containing whole alphabet within single string 
+    // declare string variable containing whole alphabet within single string 
     // declare variable that splits aforementioned string
     // declare variable with counter
 
@@ -26,22 +26,21 @@ const checkIfPangram = function(sentence) {
     // if counter reaches 26 once iteration is complete (or before), return true
     // if counter does not reach 26 once iteration is complete, return false
 
-    let english = 'abcdefghijklmnopqrstuvwxyz'
-    let englishArray = english.split('');
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let alphaSep = alphabet.split("");
+    let count = 0;
 
-    let counter = 0;
+    alphaSep.forEach(letter => {
+        if (sentence.includes(letter)) {
+            count++
+            }
+        })
 
-    englishArray.forEach(char => {
-        if (sentence.includes(char)) {
-            counter++
-        }
-    });
-
-    if (counter == 26) {
-        return true;
-    } else {
-        return false;
-    }
+if(count === 26) {
+    return true;
+} else {
+    return false;
+}
 };
 
 console.log(checkIfPangram(sentence))
