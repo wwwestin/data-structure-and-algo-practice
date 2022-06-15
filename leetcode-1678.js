@@ -1,6 +1,6 @@
-// You own a Goal Parser that can interpret a string command. The command consists of an alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the string "G", "()" as the string "o", and "(al)" as the string "al". The interpreted strings are then concatenated in the original order.
+// You own a Goal Parser that can interpret a resulting command. The command consists of an alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the resulting "G", "()" as the resulting "o", and "(al)" as the resulting "al". The interpreted resultings are then concatenated in the original order.
 
-// Given the string command, return the Goal Parser's interpretation of command.
+// Given the resulting command, return the Goal Parser's interpretation of command.
 
  
 
@@ -25,35 +25,27 @@
 const command = "G()(al)"
 
 const interpret = function(command) {
-    // declare empty string variable (result)
-    // for loop to iterate through command
-    // conditional for adding 'G' to result if encountered
-    // conditional for adding 'o' to result if "(" AND  ")" is encountered along with advancing the iteration by 1 (since "()" will only be max one character ahead of "(")
-    // else statement for if "(" AND "al" is encountered along with advancing the iteration by 3 (since "(al)" will only be max three characters ahead of "(")
+    let result = "";
 
-   
-    let result = '';
-    
-    for(let i = 0; i<command.length; i++) {
-        
-        if(command[i] == 'G') {
-            result += command[i]; 
-        }
-        
-        if(command[i] == '(') {
-            if(command[i+1] == ')') {
-                result += 'o';
+    for (let i = 0; i <= command.length; i++) {
+        if (command[i] == "G") {
+        result += command[i];
+    }
+        if (command[i] == "(") {
+            if (command[i + 1] == ")") {
+                result += "o";
                 i += 1;
             } else {
-                result += 'al';
+                result += "al"
                 i += 3;
-            }
         }
     }
-    
-    return result;
-
+   
+}
+return result;
 };
+
+
 
 console.log(interpret(command))
 
