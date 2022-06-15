@@ -15,22 +15,19 @@
 // Output: 0
 
 const numJewelsInStones = function(jewels, stones) {
-    // declare counter variable
-    // delcare conditional to return 0 if neither jewels nor stones are in parameters
-    // for-of loop to iterate through stones to determine if jewels are present inside of stones
-    // if jewels are present inside of stone, count is incremented by 1
-    // return count once all iterables are looped over
-    
     if (!jewels || !stones) return 0;
-    
-    let count = 0;
 
-    for (const c of stones) {
-        if (jewels.includes(c)) count++;
+    count = 0;
+
+    for (const j of stones) {
+        if (jewels.includes(j)) count++
     }
 
     return count;
+
 };
+    
+   
 
 console.log(numJewelsInStones("j", "jJJJjJJJj"));
 console.log(numJewelsInStones("z", "ZZ"));
