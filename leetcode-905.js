@@ -15,22 +15,17 @@
 // Output: [0]
 
 const sortArrayByParity = function(nums) {
-    // declare empty arrays to store odd and even numbers
-    // for loop to iterate through array
-    // if the modulo of i is 0, push to even array, else push to to odd array
-    // return concated even and odd array (ensure odd array is at the end)
-    
-    let arrOdd = [];
-    let arrEven = [];
+    let even = [];
+    let odd = [];
 
-        for(let i= 0; i< nums.length; i++){
-            if(nums[i] % 2 == 0){
-                arrEven.push(nums[i]);
-            } else {
-                arrOdd.push(nums[i]);
-            }  
-        }
-    return newArray = arrEven.concat(arrOdd);
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 === 0) {
+            even.push(nums[i])
+    } else {
+        odd.push(nums[i]);
+    }
+}
+    return even.concat(odd)
 };
 
 console.log(sortArrayByParity([3,1,2,4]));
