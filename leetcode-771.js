@@ -17,14 +17,13 @@
 const numJewelsInStones = function(jewels, stones) {
     if (!jewels || !stones) return 0;
 
-    count = 0;
+    let count = 0;
 
-    for (const j of stones) {
-        if (jewels.includes(j)) count++
+    for(s of stones) {
+        if (jewels.includes(s)) count++
     }
 
     return count;
-
 };
     
    
