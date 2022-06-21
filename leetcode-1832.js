@@ -17,19 +17,21 @@
 sentence = "thequickbrownfoxjumpsoverthelazydog";
 
 const checkIfPangram = function(sentence) {
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    let alphaS = alphabet.split("");
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    const alphaS = alphabet.split('');
     let count = 0;
 
-    for (let i = 0; i <= sentence.length; i++) {
-        if (sentence.includes(alphaS[i])) count ++
+    for (let i = 0; i < sentence.length; i++) {
+        if (sentence.includes(alphaS[i])) 
+        count++
     }
 
     if (count == 26) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
+
 };
    
 
