@@ -16,12 +16,12 @@
 
 
 const reverseString = function(s) {
-    let newArr = [];
+   let arr = [];
 
-    for (let i = s.length -1; i >= 0; i--) {
-        newArr.push(s[i]);
-    }
-    return newArr;
+   for (let i = s.length -1; i >= 0; i--) {
+    arr.push(s[i]);
+   }
+   return arr;
 };
 
 console.log(reverseString(["h","e","l","l","o"]))
