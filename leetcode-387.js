@@ -15,17 +15,12 @@
 // Output: -1
 
 const firstUniqChar = function(s) {
-    // iterate through string using for loop
-    // conditional using indexOf and lastIndexOf to check for repeating characters
-    // return index for first non-repeating character
-    // if not present, return -1
-
+    
     for (let i = 0; i <= s.length; i++) {
-        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) {
-            return i;
-        } 
-    }
-    return -1
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) return i;
+    } 
+        return -1
+    
 };
 
 console.log(firstUniqChar('livelaughlove'));
