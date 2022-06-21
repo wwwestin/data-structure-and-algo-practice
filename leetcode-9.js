@@ -5,16 +5,10 @@
 // For example, 121 is a palindrome while 123 is not.
 
 var isPalindrome = function(x) {
-    let convert =  x.toString();
-    let toArr = convert.split('');
-    let rev = toArr.reverse();
-    let j = rev.join('');
+   let convert = x.toString().split("");
+   let reverse = convert.reverse();
 
-    if (convert === rev) {
-        return true; 
-    } else {   
-        return false;
-    } 
+   return reverse.join('') == x;
 };
 
 console.log(isPalindrome(155))
