@@ -13,17 +13,14 @@
 // Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel. Therefore, they are alike.
 
 const halvesAreAlike = function(s) {
-    
-const vowels = ["a","e","i","o","u"];
-let count = 0;
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let result = 0;
 
-s = s.toLowerCase();
-
-for (let i = 0; i <= s.length/2; i++) {
-  if (vowels.includes(s[i])) count++
-  if (vowels.includes(s[s.length - i -1])) count--
-}
-return count ===0;
+    for (let i = 0; i < s.length/2; i++) {
+      if (vowels.includes(s[i])) result++
+      if (vowels.includes(s[s.length - i - 1])) result--
+    }
+    return result === 0;
 };
 
 console.log(halvesAreAlike("book"));
