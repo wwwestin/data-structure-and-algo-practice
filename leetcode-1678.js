@@ -40,7 +40,7 @@ const interpret = function(command) {
             phrase += "al"
             i += 3
         }  
-    }  
+        }  
     }
     return phrase;
 };
