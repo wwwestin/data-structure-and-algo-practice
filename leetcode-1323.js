@@ -26,14 +26,17 @@
 // Explanation: It is better not to apply any change.
 
 const maximum69Number  = function(num) {
-    var newNum = num.toString().split("");
-    for(var i=0; i<=newNum.length; i++){
-        if (newNum[i]== 6){
-            newNum[i]= 9
-            break;
+
+    const con = num.toString().split('')
+   
+    for (let i = 0; i < con.length; i++) {
+        if (con[i] == 6) {
+        con[i] = 9;
+        break
         }
     }
-    return newNum.join("");
+
+    return con.join('');
 };
 
 console.log(maximum69Number(9669))
