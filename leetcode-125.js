@@ -11,5 +11,15 @@
 // Explanation: "amanaplanacanalpanama" is a palindrome.
 
 const isPalindrome = function(s) {
-    
+    // declare variable (s) that replaces all characters in input string to lowercase alphanumeric characters delineating in regex statement
+    // declare variable (j) that turns s into array, reverses it, and joins it
+    // return boolean evaluating whether s is the same as j
+
+    s = s.replace(/[^a-zA-Z0-9]+/g, "").toLowerCase();
+	
+    r = s.split("").reverse().join("");
+	
+    return s == r;
 };
+
+console.log(isPalindrome("A man, a plan, a canal: Panama"))
