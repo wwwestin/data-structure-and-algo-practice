@@ -25,24 +25,24 @@
 const command = "G()(al)"
 
 const interpret = function(command) {
-    let result = "";
+    let phrase = "";
 
-    for (let i = 0; i <= command.length; i++) {
+    for (let i = 0; i < command.length; i++) {
         if (command[i] == "G") {
-        result += command[i];
-    }
+            phrase += "G"
+        } 
+
         if (command[i] == "(") {
             if (command[i + 1] == ")") {
-                result += "o";
-                i += 1;
-            } else {
-                result += "al"
-                i += 3;
-        }
+            phrase += "o"
+            i += 1
+        } else {
+            phrase += "al"
+            i += 3
+        }  
+    }  
     }
-   
-}
-return result;
+    return phrase;
 };
 
 
