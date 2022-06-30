@@ -19,3 +19,6 @@ const intersection = (a, b) => {
   };
 
   console.log(intersection([4,2,1,6], [3,6,9,2,10]));
+
+//   Time: O(n+m)
+//   Space: O(n)
