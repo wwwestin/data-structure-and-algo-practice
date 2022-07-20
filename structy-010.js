@@ -8,8 +8,23 @@
 
 
 const pairSum = (numbers, targetSum) => {
-    
+    // create empty hashmap variable
+    // use for loop to iterate over numbers
+    // with in loop, create variable to reference element and index of numbers AND
+    // create variable to reference subtracted value of target sum subtracted FROM
+    // num
+    // conditional with in-loop to determine if complement is contained in previousNums
+    // return array of indices
 
+const previousNums = {};
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    const num = numbers[i];
+    const complement = targetSum - num;
+    if (complement in previousNums) return [i, previousNums[complement]];
+    
+    previousNums[num] = i;
+  }
   };
 
   console.log(pairSum([3, 2, 5, 4, 1], 8));
