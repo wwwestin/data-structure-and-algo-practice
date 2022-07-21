@@ -1,5 +1,5 @@
-// Write a function, linkedListValues, that takes in the head of a linked list as an argument. The function should return an array containing all values of the nodes 
-// in the linked list.
+// Write a function, linkedListValues, that takes in the head of a linked list as an argument. The function 
+// should return an array containing all values of the nodes in the linked list.
 
 class Node {
   constructor(val) {
@@ -18,8 +18,30 @@ b.next = c;
 c.next = d;
 
 const linkedListValues = (head) => {
-   
 
-  };
+//   ITERATIVE SOLUTION =
+//    let current = head;
+//    const values =[];
+
+//    while(current !== null) {
+//     values.push(current.val);
+//     current = current.next;
+//    }
+// return values;
+
+// RECURSIVE SOLUTION = 
+  const values =[];
+  fillValues(head,values);
+  return values;
+};
+
+const fillValues = (head, values) => {
+  if(head === null) return;
+  values.push(head.val);
+  fillValues(head.next, values);
+};
+
+
+
   
 console.log(linkedListValues(a));
