@@ -20,7 +20,27 @@ b.next = c;
 c.next = d;
 
 const getNodeValue = (head, index) => {
-    
+
+    // Iterative solution:
+
+    // let current =  head;
+    // let count = 0;
+    // let val = [];
+
+    // while(current !== null) {
+    //     if(count === index) val.push(current.val)
+    //     current = current.next;
+    //     count += 1;
+    // }
+
+    // return val.join('');
+
+
+    // Recursive solution:
+
+    if(head === null) return null;
+    if(index === 0) return head.val;
+    return getNodeValue(head.next, index -1);
   };
 
 console.log(getNodeValue(a, 2));
