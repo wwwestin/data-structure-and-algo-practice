@@ -56,15 +56,15 @@ class Node {
 
         // Recursive Solution:
 
-        if (head1 === null && head2 === null) return null;
-        if (head1 === null) return head2;
-        if (head2 === null) return head1;
+        if (head1 === null && head2 === null) return null; // conditions for ending iteration
+        if (head1 === null) return head2; // condition for if head2 is longer than head1
+        if (head2 === null) return head1; // condition for if head1 is longer than head2
 
-        const next1 = head1.next;
-        const next2 = head2.next;
-        head1.next = head2;
-        head2.next = zipperLists(next1, next2)
-        return head1;
+        const next1 = head1.next; // storing next value of head1
+        const next2 = head2.next; // storing next value of head2
+        head1.next = head2; // reassigning next iteration to head2
+        head2.next = zipperLists(next1, next2) // reassigning next iteration to result of zipperLists functioning being called taking in next1 & next2 rather than original lists
+        return head1; // return list modified in-place
     };
 
     console.log(zipperLists(a, x));
