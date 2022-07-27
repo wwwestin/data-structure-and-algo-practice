@@ -24,7 +24,28 @@ class Node {
 
 
     const longestStreak = (head) => {
-        
+        let maxStreak = 0;
+        let currentStreak = 0;
+        let preVal = null;
+
+        let current = head;
+
+        while (current !== null) {
+
+            if (preVal === current.val) {
+                currentStreak += 1;
+            } else {
+                currentStreak = 1;
+            }
+            
+            preVal = current.val;
+            current = current.next;
+            
+            if (currentStreak > maxStreak) {
+                maxStreak = currentStreak;
+            }
+        }
+        return maxStreak;
     };
 
 
