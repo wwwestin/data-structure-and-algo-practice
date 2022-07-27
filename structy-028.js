@@ -31,7 +31,31 @@ d.next = e;
 e.next = f;
 
 const removeNode = (head, targetVal) => {
+
+    // Iterative Solution:
+
+    // if (head.val === targetVal) return head.next;
     
+    // let prev = null;
+    // let current = head;
+
+    // while (current !== null) {
+    //     if (current.val === targetVal){
+    //         prev.next = current.next
+    //         break;
+    //     }
+    //     prev = current;
+    //     current = current.next;
+    // }
+
+    // return head;
+
+    // Recursive Solution:
+
+    if (head === null) return null;
+    if (head.val === targetVal) return head.next;
+    head.next = removeNode(head.next, targetVal);
+    return head;
 };
 
 console.log(removeNode(a, "c"));
