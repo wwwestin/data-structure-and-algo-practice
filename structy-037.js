@@ -24,18 +24,31 @@ b.right = e;
 c.right = f;
 
 const depthFirstValues = (root) => {
-    const stack = [root];
-    const result = [];
 
-    while (stack.length > 0) {
-        const current = stack.pop();
+    // Iterative Solution: 
+    // if (root === null) return [];
 
-        result.push(current.val);
+    // const stack = [root];
+    // const result = [];
 
-        if (current.right) stack.push(current.right);
-        if (current.left) stack.push(current.left); 
-    }
-    return result;
+    // while (stack.length > 0) {
+    //     const current = stack.pop();
+
+    //     result.push(current.val);
+
+    //     if (current.right) stack.push(current.right);
+    //     if (current.left) stack.push(current.left); 
+    // }
+    // return result;
+
+    //Recursive Solution:
+
+    if (root === null) return [];
+    const leftValues = depthFirstValues(root.left);
+    const rightValues = depthFirstValues(root.right);
+
+    return [root.val, ...leftValues, ...rightValues];
+
 };
 
 console.log(depthFirstValues(a));
