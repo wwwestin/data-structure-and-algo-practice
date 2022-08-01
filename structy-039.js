@@ -23,7 +23,31 @@ b.right = e;
 c.right = f;
 
 const treeSum = (root) => {
-    
+
+    // Iterative breadth-first solution:
+
+    // if (root === null) return 0;
+
+    // let queue = [ root ];
+
+    // let result = 0;
+
+    // while (queue.length > 0) {
+    //     const current = queue.shift();
+        
+    //     result += current.val;
+
+    //     if (current.left !== null) queue.push(current.left);
+    //     if (current.right !== null) queue.push(current.right);
+    // }
+
+    // return result;
+
+    // Recursive depth-first solution:
+
+    if (root === null) return 0;
+
+    return root.val + treeSum(root.left) + treeSum(root.right);
 };
 
 
