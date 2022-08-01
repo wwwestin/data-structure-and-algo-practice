@@ -23,7 +23,28 @@ b.right = e;
 c.right = f;
 
 const treeIncludes = (root, target) => {
-    
+
+    // Iterative depth-first solution:
+
+    // if (root === null) return false;
+
+    // let stack = [ root ];
+
+    // while (stack.length > 0) {
+    //     const current = stack.pop();
+
+    //     if (current.val === target) return true;
+    //     if (current.left !== null) stack.push(current.left);
+    //     if (current.right !== null) stack.push(current.right);
+
+    // }
+    // return false;
+
+    // Recursive depth first solution:
+
+    if (root === null) return false;
+    if (root.val === target) return true;
+    return treeIncludes(root.left, target) || treeIncludes(root.right, target);
 };
 
 
