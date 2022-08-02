@@ -24,7 +24,30 @@ c.right = f;
 
 
 const treeValueCount = (root, target) => {
-    
+
+    // Iterative breadth-first solution:
+    // if (root === null) return 0;
+
+    // let queue = [ root ];
+
+    // let count = 0;
+
+    // while (queue.length > 0) {
+    //     const current = queue.shift();
+
+    //     if (current.val === target) count += 1;
+
+    //     if (current.right !== null) queue.push(current.right);
+    //     if (current.left !== null) queue.push(current.left);
+    // }
+
+    // return count;
+
+    // Recursive depth-first solution:
+
+    if (root === null) return 0;
+    const match = root.val === target ? 1 : 0;
+    return match + treeValueCount(root.left, target) + treeValueCount(root.right, target);
 };
 
 
