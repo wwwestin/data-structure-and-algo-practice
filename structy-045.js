@@ -28,7 +28,12 @@ b.right = e;
 c.right = f;
 
 function howHigh(node) {
-    
+    if (node === null) return -1;
+
+    const leftSub = howHigh(node.left);
+    const rightSub = howHigh(node.right);
+
+    return 1 + Math.max(leftSub, rightSub);
 };
 
 console.log(howHigh(a));
