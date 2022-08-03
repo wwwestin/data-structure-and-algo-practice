@@ -1,5 +1,5 @@
-// Write a function, bottomRightValue, that takes in the root of a binary tree. The function should return the 
-// right-most value in the bottom-most level of the tree.
+// Write a function, bottomRightValue, that takes in the root of a binary tree. The 
+// function should return the right-most value in the bottom-most level of the tree.
 
 // You may assume that the input tree is non-empty.
 
@@ -26,7 +26,20 @@ c.right = f;
 
 
 const bottomRightValue = (root) => {
-    
+    let queue = [ root ];
+
+    let current = null;
+
+    while (queue.length > 0) {
+        current = queue.shift();
+
+        if (current.left !== null) queue.push(current.left);
+        if (current.right !== null) queue.push(current.right);
+    }
+
+    return current.val;
 };
+
+// 
 
 console.log(bottomRightValue(a));
