@@ -1,6 +1,7 @@
 // A pangram is a sentence where every letter of the English alphabet appears at least once.
 
-// Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+// Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, 
+// or false otherwise.
 
  
 
@@ -17,22 +18,21 @@
 sentence = "thequickbrownfoxjumpsoverthelazydog";
 
 const checkIfPangram = function(sentence) {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    const alphaS = alphabet.split('');
+
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let alphaS = alphabet.split("");
     let count = 0;
 
-    for (let i = 0; i < sentence.length; i++) {
-        if (sentence.includes(alphaS[i])) 
-        count++
+    for (let i = 0; i <= sentence.length; i++) {
+        if (sentence.includes(alphaS[i])) count ++
     }
-
-    if (count == 26) {
+    if (count === 26) {
         return true;
     } else {
         return false;
     }
-
 };
    
 
-console.log(checkIfPangram(sentence))
+console.log(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"));
+console.log(checkIfPangram("leetcode"));
