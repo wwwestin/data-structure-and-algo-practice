@@ -5,14 +5,14 @@
 // You may assume that each input array does not contain duplicate elements.
 
 const intersection = (a, b) => {
-  const count = [];
+  let output = [];
 
-  for (char of a) {
-    if(b.includes(char)) count.push(char);
+  for (s of b) {
+    if (a.includes(s)) output.push(s)
   }
 
-  return count;
-  };
+  return output;
+};
 
   console.log(intersection([4,2,1], [1,2,4,6]));
 
