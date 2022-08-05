@@ -7,8 +7,9 @@
 
 
 const uncompress = (s) => {
-  const numbers = "0123456789";
   
+  const numbers = "0123456789";
+
   let result = [];
 
   let i = 0;
@@ -16,18 +17,19 @@ const uncompress = (s) => {
 
   while (j < s.length) {
     if (numbers.includes(s[j])) {
-     j += 1;
+      j += 1;
   } else {
     const num = Number(s.slice(i, j));
     for (let count = 0; count < num; count += 1) {
-      result.push(s[j]);
+      result.push(s[j])
     }
-      j += 1;
-      i = j;
-    }
+    j += 1;
+    i = j;
   }
-
+}
+  
   return result.join('');
+
 };
 
 console.log(uncompress("2c3a1t"));
