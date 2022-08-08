@@ -4,26 +4,27 @@
 
 const compress = (s) => {
 
-  let output = [];
-
   let i = 0;
   let j = 0;
 
+  let result = [];
+
   while (j <= s.length) {
-    if(s[i] === s[j]) {
+    if (s[i] === s[j]) {
       j += 1;
     } else {
-      const num = i - j;
+      const num = j - i;
+
       if (num === 1) {
-        output.push(s[i]) 
+        result.push[i];
     } else {
-      output.push(String(num), s[i]);
+      result.push(String(num), s[i]);
     }
     i = j;
   }
-  }
+}
 
-  return output.join('');
+  return result.join('');
 };
 
   console.log(compress('ssssbbz'));
