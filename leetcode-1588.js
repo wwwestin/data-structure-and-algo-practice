@@ -21,16 +21,18 @@
 // If we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58
 
 const sumOddLengthSubarrays = function(arr) {
-    
     let sum = 0;
 
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         let startIndex = i + 1;
-        let endIndex = arr.length -i;
-        let oddNumbers = Math.ceil(startIndex*endIndex/2)
-        sum += arr[i]*oddNumbers;
+        let endIndex = arr.length - i;
+
+        let oddArrNumbers = Math.ceil(startIndex*endIndex/2);
+        sum += arr[i] * oddArrNumbers;
+
     }
-    return sum;  
+    
+    return sum;
 };
 
 console.log(sumOddLengthSubarrays([1,4,2,5,3]));
