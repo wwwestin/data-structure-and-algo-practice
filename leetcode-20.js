@@ -1,4 +1,5 @@
-// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is 
+// valid.
 
 // An input string is valid if:
 
@@ -18,13 +19,20 @@
 
 
 const isValid = function(s) {
-  
-let arr = [];
+    s = s.split("");
 
-for (let i = 0; i <= s.length; i++) {
+    let stack = [];
   
-}
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] == "(" || s[i] == "[" || s[i] == "{") stack.push(s[i]);
+        if (s[i] == ")") if (stack[stack.length -1] == "(") stack.pop(); else return false;
+        if (s[i] == "]") if (stack[stack.length -1] == "[") stack.pop(); else return false;
+        if (s[i] == "}") if (stack[stack.length -1] == "{") stack.pop(); else return false;
+    }
+
+    return stack.length == 0;
     
 };
 
 console.log(isValid("()"));
+console.log(isValid("()[]{}"))
