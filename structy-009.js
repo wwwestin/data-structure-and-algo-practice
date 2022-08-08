@@ -12,7 +12,7 @@ const mostFrequentChar = (s) => {
         if (!(char in count)) {
             count[char] = 0;
         }
-        count[char] += 1;
+        count[char] += 1
     }
 
     let best = null;
@@ -20,9 +20,9 @@ const mostFrequentChar = (s) => {
     for (let char of s) {
         if (best === null || count[char] > count[best]) best = char;
     }
-
     return best;
 };
 
 console.log(mostFrequentChar('bookeeper'));
+console.log(mostFrequentChar('mississippi'));
 
