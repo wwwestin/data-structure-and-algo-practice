@@ -1,6 +1,7 @@
 // You are given a positive integer num consisting only of digits 6 and 9.
 
-// Return the maximum number you can get by changing at most one digit (6 becomes 9, and 9 becomes 6).
+// Return the maximum number you can get by changing at most one digit (6 becomes 9, 
+// and 9 becomes 6).
 
  
 
@@ -25,18 +26,17 @@
 // Output: 9999
 // Explanation: It is better not to apply any change.
 
-const maximum69Number  = function(num) {
+const maximum69Number = function(num) {
+    let result = num.toString().split('');
+    
 
-    const con = num.toString().split('')
-   
-    for (let i = 0; i < con.length; i++) {
-        if (con[i] == 6) {
-        con[i] = 9;
-        break
+    for(let i = 0; i < result.length; i++) {
+        if (result[i] == 6) {
+            result[i] = 9;
+            break;
         }
     }
-
-    return con.join('');
+     return result.join('');
 };
 
 console.log(maximum69Number(9669))
