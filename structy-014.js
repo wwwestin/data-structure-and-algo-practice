@@ -7,19 +7,12 @@
 
 
 const fiveSort = (nums) => {
-    // create two pointer variables (one for start of array and one starting at the end)
-    // while loop to iterate as long as i is less than j
-    // during while loop, decrement j if element is 5
-    // else if condition for if nums of i is 5, then rearrange that 5 element to the
-    // end of the existing array, then increment i
-    // otherwise, increment i
-    // return modified original array
 
     let i = 0;
-    let j = nums.length - 1;
+    let j = nums.length -1;
 
-    while(i < j) {
-        if(nums[j] === 5) {
+    while (i <= j) {
+        if (nums[j] === 5) {
             j -= 1;
         } else if (nums[i] === 5) {
             [nums[i], nums[j]] = [nums[j], nums[i]];
@@ -28,7 +21,7 @@ const fiveSort = (nums) => {
             i += 1;
         }
     }
-return nums;
+    return nums;
 };
 
 console.log(fiveSort([12, 5, 1, 5, 12, 7]));
