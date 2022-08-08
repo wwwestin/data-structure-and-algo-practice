@@ -23,25 +23,26 @@
 // Explanation: s can be split into "LLLLRRRR".
 
 const balancedStringSplit = function(s) {
-    let output = 0
-    let Rcount = 0
-    let Lcount = 0
-    
-    for(let i = 0; i < s.length; i++) {
-        
-        if(s[i] == 'R') {
-        	Rcount++
+    let output = 0;
+
+    let LCount = 0;
+    let RCount = 0;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "L") {
+            LCount ++;
         } else {
-        	Lcount++
+        RCount ++;
         }
-        
-        if(Rcount == Lcount) {
-            output++
-            Rcount = 0
-            Lcount = 0
-        }
+        if (LCount === RCount) {
+            output ++;
+            LCount = 0;
+            RCount = 0;
     }
-    return output
+
+}
+
+    return output;
 };
 
 console.log(balancedStringSplit("RLLLLRRRLR"));
