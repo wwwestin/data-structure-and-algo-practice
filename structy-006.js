@@ -17,19 +17,23 @@ const uncompress = (s) => {
   let result = [];
 
   while (j < s.length) {
-    if (numbers.includes(s[j])) { 
-      j += 1; 
-  } else {
-    const num = Number(s.slice(i, j));
+      if (numbers.includes(s[j])) {
+        j += 1;
+      } else {
+        const num = Number(s.slice(i, j));
+        for (let count = 0; count < num; count +=1) {
 
-    for(let count = 0; count < num; count += 1) {
-      result.push(s[j])
+        result.push(s[j]);
+
+        // create second loop to push number to result derived from i and j indices
+      }
+      j += 1;
+      i = j;
     }
-    j += 1;
-    i = j;
   }
-}
+
   return result.join('');
+  
 };
 
 console.log(uncompress("2c3a1t"));
