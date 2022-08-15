@@ -17,13 +17,10 @@
 
 const arrayStringsAreEqual = function(word1, word2) {
     
-    if (word1.join('') === word2.join('')) {
-        return true;
-    } else {
-        return false;
-    }
+    return (word1.join('') === word2.join('')) 
+    
 };
 
-console.log(arrayStringsAreEqual(["ab", "c"], ["a", "kc"]))
+console.log(arrayStringsAreEqual(["ab", "c"], ["a", "bc"]))
 
 
