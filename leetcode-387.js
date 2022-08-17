@@ -1,4 +1,5 @@
-// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+// Given a string s, find the first non-repeating character in it and return its index. If it does not exist, 
+// return -1.
 
  
 
@@ -15,11 +16,14 @@
 // Output: -1
 
 const firstUniqChar = function(s) {
-    
-   for (let i = 0; i < s.length; i++) {
-    if (s.indexOf(s[i]) == s.lastIndexOf(s[i])) return i;
-   }
+    for (let i = 0; i < s.length; i++) {
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])){
+            return i;
+        }
+    }
     return -1;
 };
 
 console.log(firstUniqChar('livelaughlove'));
+console.log(firstUniqChar('leetcode'));
+console.log(firstUniqChar('aabb'));
