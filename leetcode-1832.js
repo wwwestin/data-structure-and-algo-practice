@@ -15,22 +15,22 @@
 // Input: sentence = "leetcode"
 // Output: false
 
-sentence = "thequickbrownfoxjumpsoverthelazydog";
 
 const checkIfPangram = function(sentence) {
+    if (sentence.length < 26) return false;
 
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    let alphaS = alphabet.split("");
-    let count = 0;
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-    for (let i = 0; i <= sentence.length; i++) {
-        if (sentence.includes(alphaS[i])) count ++
+    let count = {};
+
+    for (char of sentence) {
+        if (alphabet.includes(char)) {
+            count[char] = 0;
+        }
+        count[char] += 1;
     }
-    if (count === 26) {
-        return true;
-    } else {
-        return false;
-    }
+
+    return Object.keys(count).length == 26;
 };
    
 
