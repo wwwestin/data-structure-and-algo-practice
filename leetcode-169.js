@@ -6,21 +6,28 @@
 const majorityElement = function(nums) {
 
     let count = {};
-
-    for (let n of nums) {
+    
+    for (n of nums) {
         if (!(n in count)) {
             count[n] = 0;
         }
         count[n] += 1;
     }
+    
+    let max = 0;
+    let maxCount = 0;
 
-    let best = 0;
-
-    for (let n of nums) {
-        if (best === 0 || count[n] > count[best]) best = n
+    for (key of Object.keys(count)) {
+        console.log(key);
+        if (count[key] > maxCount) {
+            
+            max = key;
+            maxCount = count[key];
+        }
     }
     
-    return best;
+    return max;
+    
 };
 
 
