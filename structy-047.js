@@ -30,7 +30,22 @@ c.right = f;
 
 
 const allTreePaths = (root) => {
+    if (root === null) return [];
+    if (root.left === null && root.right === null) return [ [root.val] ];
+
+    const paths = [];
+
+    const leftTreePaths = allTreePaths(root.left);
+    for (let subPath of leftTreePaths) {
+        paths.push([root.val, ...subPath]);
+    }
+
+    const rightTreePaths = allTreePaths(root.right);
+    for (let subPath of rightTreePaths) {
+        paths.push([root.val, ...subPath]);
+    }
         
+    return paths;
 };
 
 
