@@ -19,11 +19,11 @@
 const checkIfPangram = function(sentence) {
     if (sentence.length < 26) return false;
 
-    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
     let count = {};
 
-    for (char of sentence) {
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    for (let char of sentence) {
         if (alphabet.includes(char)) {
             count[char] = 0;
         }
