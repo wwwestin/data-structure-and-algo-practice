@@ -17,7 +17,14 @@ b.next = c
 c.next = d
 
 def linked_list_values(head):
-  
-  return
+
+    # Iterative:
+    
+    values = []
+    current = head
+    while current is not None:
+        values.append(current.val)
+        current = current.next
+    return values
 
 print (linked_list_values(a))
