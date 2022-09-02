@@ -8,9 +8,11 @@ const intersection = (a, b) => {
  
   let result = [];
 
-    for (duplicate of a) {
-      if (b.includes(duplicate)) result.push(duplicate);
+  for (char of a) {
+    if (b.includes(char)) {
+      result.push(char)
     }
+  }
 
   return result;
 };
