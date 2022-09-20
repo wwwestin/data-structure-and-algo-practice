@@ -9,24 +9,14 @@
 
 const pairSum = (numbers, targetSum) => {
 
-  // Nested loop solution:
+  // Nested for loops: 
+  // for (let i = 0; i < numbers.length; i++) {
+  //   for (let j = i + 1; j < numbers.length; j++) {
+  //     if (numbers[i] + numbers[j] == targetSum) return ([i,j]);
+  //   }
+  // }
 
-//   let result = [];
-
-//   for (let i = 0; i < numbers.length; i++) {
-//     for (let j = i + 1; j < numbers.length; j++) {
-//       if (numbers[i] + numbers[j] ==  targetSum) {
-//         result.push(i);
-//         result.push(j);
-//     }
-//   }
-// }
-
-//   return result;
-
-// Hashmap solution:
-
-  let previous = {};
+let previous = {};
 
   for (let i = 0; i < numbers.length; i++) {
     const num = numbers[i];
@@ -40,4 +30,6 @@ const pairSum = (numbers, targetSum) => {
 };
 
   console.log(pairSum([3, 2, 5, 4, 1], 8));
+  console.log(pairSum([4, 7, 9, 2, 5, 1], 5));
+  console.log(pairSum([4, 7, 9, 2, 5, 1], 3));
 
