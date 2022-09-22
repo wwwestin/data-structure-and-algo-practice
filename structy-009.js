@@ -6,6 +6,7 @@
 
 
 const mostFrequentChar = (s) => {
+   
     let count = {};
 
     for (char of s) {
@@ -18,7 +19,7 @@ const mostFrequentChar = (s) => {
     let best = null;
 
     for (char of s) {
-        if (best === null || count[best] < count[char]) best = char;
+        if (best === null || count[char] > count[best]) best = char;
     }
 
     return best;
