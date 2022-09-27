@@ -7,22 +7,22 @@
 
 const mostFrequentChar = (s) => {
    
-    let count = {};
+   let count = {};
 
-    for (char of s) {
-        if (!(char in count)) {
-            count[char] = 0;
-        }
+   for (char of s) {
+    if (!(char in count)) {
+        count[char] = 0;
+    }
         count[char] += 1;
-    }
+   }
 
-    let best = null;
+   let best = null;
 
-    for (char of s) {
-        if (best === null || count[char] > count[best]) best = char;
-    }
+   for (char in count) {
+    if (best === null || count[char] > count[best]) best = char;
+   }
 
-    return best;
+   return best;
 };
 
 console.log(mostFrequentChar('bookeeper'));
