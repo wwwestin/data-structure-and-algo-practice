@@ -4,12 +4,12 @@
 // or false otherwise.
 
  
-
 // Example 1:
 
 // Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
 // Output: true
 // Explanation: sentence contains at least one of every letter of the English alphabet.
+
 // Example 2:
 
 // Input: sentence = "leetcode"
@@ -21,16 +21,15 @@ const checkIfPangram = function(sentence) {
 
     let count = {};
 
-    let alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-    for (let char of sentence) {
-        if (alphabet.includes(char)) {
+    for (char of sentence) {
+        if (!(char in count)) {
             count[char] = 0;
         }
         count[char] += 1;
     }
 
-    return Object.keys(count).length == 26;
+    return Object.keys(count).length >= 26;
+   
 };
    
 
