@@ -9,24 +9,19 @@
 
 const pairSum = (numbers, targetSum) => {
 
-  // Nested for loops: 
-  // for (let i = 0; i < numbers.length; i++) {
-  //   for (let j = i + 1; j < numbers.length; j++) {
-  //     if (numbers[i] + numbers[j] == targetSum) return ([i,j]);
-  //   }
-  // }
+  let previous = {};
 
-let previous = {};
-
-  for (let i = 0; i < numbers.length; i++) {
-    const num = numbers[i];
-    const complement = targetSum - num;
+  for (let i = 0; i < numbers.length; i+=1) {
+    let num = numbers[i];
+    let complement = targetSum - num;
 
     if (complement in previous) {
       return [i, previous[complement]]
-    }
+    } 
     previous[num] = i;
   }
+
+  return previous;
 };
 
   console.log(pairSum([3, 2, 5, 4, 1], 8));
