@@ -20,25 +20,24 @@
 // Output: 3
 
 const countGoodRectangles = function(rectangles) {
+
     let max = 0;
     let count = 0;
-    
-    for(let i = 0; i < rectangles.length; i++) {
-        let minSide = Math.min(rectangles[i][0], rectangles[i][1]) 
-        // minSide returns lowest value inside subarray at given index
-        
-        if(minSide > max) {
-            count = 0
+
+    for (let i = 0; i < rectangles.length; i++) {
+        let minSide = Math.min(rectangles[i][0], rectangles[i][1]);
+
+        if (max < minSide) {
+            count = 0;
+
             max = minSide
-        } 
-        // if minside is greater than max, max is reassigned to minside and count is reset 0
-        
-        if(minSide === max) count++
-        // if minside is equal to max, count is incremented
+        }
+
+        if (max === minSide) count++;
     }
     
     return count;
-    
 };
 
 console.log(countGoodRectangles([[2,3],[3,7],[4,3],[3,7]]));
+console.log(countGoodRectangles([[5,8],[3,9],[5,12],[16,5]]));
