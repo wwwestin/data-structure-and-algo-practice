@@ -14,8 +14,9 @@ const fiveSort = (nums) => {
     while (i <= j) {
         if (nums[j] === 5) {
             j -= 1;
-        } else if (nums[i] == 5) {
-            [nums[i], nums[j]] = [nums[j], nums[i]];
+        } else if (nums[i] === 5) {
+            [nums[i], nums[j]] = [nums[j],nums[i]];
+            i += 1;
         } else {
             i += 1;
         }
@@ -25,4 +26,7 @@ const fiveSort = (nums) => {
 };
 
 console.log(fiveSort([12, 5, 1, 5, 12, 7]));
+console.log(fiveSort([5, 2, 5, 6, 5, 1, 10, 2, 5, 5]));
+console.log(fiveSort([5, 5, 5, 1, 1, 1, 4]));
+
 
