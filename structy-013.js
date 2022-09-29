@@ -6,15 +6,13 @@
 
 const intersection = (a, b) => {
  
-  let result = [];
+ let result = [];
 
-  for (char of a) {
-    if (b.includes(char)) {
-      result.push(char)
-    }
-  }
+ for (num of a) {
+  if (b.includes(num)) result.push(num);
+ }
 
-  return result;
+ return result;
 };
 
   console.log(intersection([4,2,1], [1,2,4,6]));
