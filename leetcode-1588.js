@@ -27,9 +27,9 @@ const sumOddLengthSubarrays = function(arr) {
         let startIndex = i + 1;
         let endIndex = arr.length - i;
 
-        let oddArrNumbers = Math.ceil(startIndex*endIndex/2);
+        let oddArrNums = Math.ceil(startIndex*endIndex/2);
 
-        sum += arr[i]*oddArrNumbers
+        sum += arr[i]*oddArrNums;
     }
 
     return sum;
