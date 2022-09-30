@@ -1,4 +1,5 @@
-// Write a function, sumList, that takes in the head of a linked list containing numbers as an argument. The function should return the total sum of all values in the 
+// Write a function, sumList, that takes in the head of a linked list containing numbers as an argument. The 
+// function should return the total sum of all values in the 
 // linked list.
 
 class Node {
@@ -20,15 +21,25 @@ c.next = d;
 d.next = e;
 
 const sumList = (head) => {
-    let sum = 0;
-    let current = head;
+  // Iterative:
 
-    while(current !== null) {
-        sum += current.val
-        current = current.next;
-    }
+  // let sum = 0;
 
-  return sum;
+  // let current = head;
+
+  // while (current !== null) {
+  //   sum += current.val; 
+
+  //   current =  current.next;
+  // }
+
+  // return sum;
+
+  // Rescursive:
+
+  if (head === null) return 0;
+
+  return head.val + sumList(head.next);
 };
 
 console.log(sumList(a));
