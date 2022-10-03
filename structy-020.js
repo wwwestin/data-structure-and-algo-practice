@@ -42,4 +42,5 @@ const sumList = (head) => {
   return head.val + sumList(head.next);
 };
 
+
 console.log(sumList(a));
