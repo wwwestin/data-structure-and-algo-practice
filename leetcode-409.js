@@ -18,7 +18,19 @@
 
 
 const longestPalindrome = function(s) {
+
+    const n = s.length
+    let freqMap = {}
+    let ans = 0
     
+    for(let i of s){
+        freqMap[i] = (freqMap[i] || 0) + 1
+        
+        if(freqMap[i]%2 === 0){
+            ans+=2
+        }
+    }
+    return n > ans ? ans+1 : ans  
 };
 
 
