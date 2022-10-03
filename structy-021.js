@@ -20,22 +20,26 @@ c.next = d;
 
 
 const linkedListFind = (head, target) => {
-    // Iterative solution:
 
-    // let current = head;
+  // Iterative:
 
-    // while(current !== null) {
-    // if(current.val == target) return true;
-    // current = current.next;
-    // }
-    // return false;
+  // let current = head;
+
+  // while (current !== null) {
+  //   if (current.val === target) {
+  //     return true;
+  //   } 
+  //   current = current.next;
+  // } 
+  
+  // return false;
+
+  // Recursive:
+
+  if (head === null) return false;
+  if (head.val === target) return true;
+  return linkedListFind(head.next, target)
+};
 
 
-    // Recursive solution:
-
-    if(head === null) return false;
-    if(head.val === target) return true;
-    return linkedListFind(head.next, target)
-  };
-
-  console.log(linkedListFind(a, "d"));
+console.log(linkedListFind(a, "d"));
