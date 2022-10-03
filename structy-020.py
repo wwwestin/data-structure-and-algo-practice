@@ -20,7 +20,21 @@ c.next = d
 d.next = e
 
 def sum_list(head):
-    return
+# Iterative:
+
+#   total_sum = 0
+#   current = head
+#   while current is not None:
+#     total_sum += current.val
+#     current = current.next
+#   return total_sum
+
+# Recursive:
+
+    if head is None:
+        return 0
+    return head.val + sum_list(head.next)
+
 
 
 print(sum_list(a))
