@@ -26,10 +26,23 @@
 const solution = function(isBadVersion) {
     
     return function(n) {
-        
+        if(n === 1) return 1;
+
+        let start = 1;
+        let end = n;
+
+        while(start <= end) {
+            let mid = Math.floor((start + end) / 2)
+            if(isBadVersion(start)) {
+                return start;
+            } else if (!isBadVersion(mid)) {
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+        return -1;
     };
 };
 
 
-console.log(solution(5));
-console.log(solution(1));
