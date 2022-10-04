@@ -23,26 +23,32 @@ c.next = d;
 d.next = e;
 e.next = f;
 
-                          // Add this second parameter for recursive solution
-const reverseList = (head, prev = null) => {
-    // Iterative Solution:
+                         
+const reverseList = (head, prev= null) => {
 
-//     let prev = null;
-//     let current = head;
-//     while (current !== null) {
-//         const next = current.next;
-//         current.next = prev;
-//         prev = current;
-//         current = next;
-//     }
-// return prev;
+    // Iterative:
 
-// Recursive Solution (worse space complexity):
+    // let current = head;
+    // let prev = null;
 
-    if(head === null) return prev;
+    // while (current !== null) {
+    //   const next = current.next;
+      
+    //   current.next = prev;
+    //   prev = current;
+    //   current = next;
+    // }
+
+    // return prev;
+
+    // Recursive:
+
+    if (head === null) return prev;
     const next = head.next;
     head.next = prev;
-    return reverseList(next, head);
+
+
+    return reverseList(next, head)
 };
 
 
